@@ -8,49 +8,55 @@
 </head>
 <body>
 
-<header>
-    <img src="logo.png" alt="OnlyCars Events Logo" class="logo">
-    <h1>OnlyCars Events</h1>
-    <p>Connecting car enthusiasts through unforgettable driving experiences</p>
+<header class="hero">
+    <div class="overlay">
+        <img src="logo.png" class="logo">
+        <h1>OnlyCars Events</h1>
+        <p>Drive. Connect. Experience.</p>
+    </div>
 </header>
 
 <section class="about">
-    <h2>About Us</h2>
+    <h2>Who We Are</h2>
     <p>
-        OnlyCars Events is an organization dedicated to bringing together individuals 
-        and groups passionate about automotive culture. Our primary focus is organizing 
-        exclusive driving tours featuring sports and performance cars.
+        OnlyCars Events connects automotive enthusiasts who share a passion 
+        for performance cars and unforgettable road trips. We organize premium 
+        driving tours across scenic routes with sports and exotic cars.
     </p>
 </section>
 
-<section class="event">
-    <h2>Upcoming Event</h2>
-    <p>
-        Join our next driving tour and experience the thrill of driving alongside other 
-        high-performance vehicles on scenic routes.
-    </p>
+<section class="features">
+    <div class="card">
+        <h3>🏁 Driving Tours</h3>
+        <p>Curated routes designed for performance driving.</p>
+    </div>
+
+    <div class="card">
+        <h3>🚗 Sports Cars</h3>
+        <p>Join a community of high-performance car owners.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌍 Community</h3>
+        <p>Meet people who share your passion for cars.</p>
+    </div>
 </section>
 
 <section class="form-section">
-    <h2>Event Registration</h2>
+    <h2>Join the Next Event</h2>
 
-    <!-- Replace YOUR_FORM_ID with Formspree ID -->
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
         
         <input type="text" name="full_name" placeholder="Full Name" required>
-        
         <input type="date" name="birth_date" required>
-
         <input type="text" name="car_model" placeholder="Car Brand, Model and Year" required>
-
         <input type="number" name="car_power" placeholder="Car Power (HP)" required>
-
         <input type="email" name="email" placeholder="Email Address" required>
 
-        <label>Upload your car photo:</label>
+        <label>Upload your car photo</label>
         <input type="file" name="car_photo" accept="image/*" required>
 
-        <button type="submit">Submit Registration</button>
+        <button type="submit">Apply Now</button>
     </form>
 </section>
 
