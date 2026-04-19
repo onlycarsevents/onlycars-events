@@ -1,10 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0a0a0a;
-    color: white;
-}
-
+    font-family: 'Poppins', sans-serif;
 /* HERO */
 .hero {
     height: 100vh;
@@ -23,8 +19,16 @@ body {
 }
 
 .logo {
-    width: 120px;
-    margin-bottom: 20px;
+    width: 200px; /* zwiększone */
+    max-width: 80%;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+    .logo:hover {
+    transform: scale(1.05);
+}
+    .logo {
+    filter: drop-shadow(0 0 10px rgba(255, 46, 46, 0.5));
 }
 
 h1 {
@@ -104,4 +108,9 @@ footer {
     to {
         background-size: 100%;
     }
+h1 {
+    font-size: 3em;
+    color: #ff2e2e;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
