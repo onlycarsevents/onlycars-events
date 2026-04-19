@@ -8,7 +8,7 @@ body {
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+    background: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,9 +16,10 @@ body {
 
 .overlay {
     text-align: center;
-    background: rgba(0,0,0,0.6);
-    padding: 40px;
-    border-radius: 10px;
+    background: rgba(0,0,0,0.65);
+    padding: 50px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -91,4 +92,16 @@ button:hover {
 footer {
     padding: 20px;
     background: #111;
+}
+.hero {
+    animation: zoomBg 6s ease-out forwards;
+}
+
+@keyframes zoomBg {
+    from {
+        background-size: 110%;
+    }
+    to {
+        background-size: 100%;
+    }
 }
