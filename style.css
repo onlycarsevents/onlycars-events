@@ -1,6 +1,10 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
@@ -8,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: zoomBg 6s ease-out forwards;
 }
 
 .overlay {
@@ -19,21 +24,22 @@ body {
 }
 
 .logo {
-    width: 200px; /* zwiększone */
+    width: 200px;
     max-width: 80%;
     margin-bottom: 25px;
     transition: transform 0.3s ease;
-}
-    .logo:hover {
-    transform: scale(1.05);
-}
-    .logo {
     filter: drop-shadow(0 0 10px rgba(255, 46, 46, 0.5));
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 h1 {
     font-size: 3em;
     color: #ff2e2e;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 section {
@@ -97,10 +103,8 @@ footer {
     padding: 20px;
     background: #111;
 }
-.hero {
-    animation: zoomBg 6s ease-out forwards;
-}
 
+/* ANIMACJA TŁA */
 @keyframes zoomBg {
     from {
         background-size: 110%;
@@ -108,9 +112,4 @@ footer {
     to {
         background-size: 100%;
     }
-h1 {
-    font-size: 3em;
-    color: #ff2e2e;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
