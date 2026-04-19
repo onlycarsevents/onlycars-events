@@ -147,3 +147,7 @@ footer {
     padding: 20px;
     background: #111;
 }
+
+html {
+    scroll-padding-top: 80px;
+}
