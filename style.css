@@ -151,3 +151,18 @@ footer {
 html {
     scroll-padding-top: 80px;
 }
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 10px 20px;
+    }
+
+    .nav-logo {
+        width: 90px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        font-size: 14px;
+    }
+}
