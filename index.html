@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyCars Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="OnlyCars Events Logo" class="logo">
+    <h1>OnlyCars Events</h1>
+    <p>Connecting car enthusiasts through unforgettable driving experiences</p>
+</header>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        OnlyCars Events is an organization dedicated to bringing together individuals 
+        and groups passionate about automotive culture. Our primary focus is organizing 
+        exclusive driving tours featuring sports and performance cars.
+    </p>
+</section>
+
+<section class="event">
+    <h2>Upcoming Event</h2>
+    <p>
+        Join our next driving tour and experience the thrill of driving alongside other 
+        high-performance vehicles on scenic routes.
+    </p>
+</section>
+
+<section class="form-section">
+    <h2>Event Registration</h2>
+
+    <!-- Replace YOUR_FORM_ID with Formspree ID -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+        
+        <input type="text" name="full_name" placeholder="Full Name" required>
+        
+        <input type="date" name="birth_date" required>
+
+        <input type="text" name="car_model" placeholder="Car Brand, Model and Year" required>
+
+        <input type="number" name="car_power" placeholder="Car Power (HP)" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <label>Upload your car photo:</label>
+        <input type="file" name="car_photo" accept="image/*" required>
+
+        <button type="submit">Submit Registration</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 OnlyCars Events</p>
+</footer>
+
+</body>
+</html>
