@@ -166,3 +166,21 @@ html {
         font-size: 14px;
     }
 }
+.ig-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff2e2e;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 46, 46, 0.6);
+    transition: 0.3s;
+}
+
+.ig-fixed:hover {
+    transform: scale(1.1);
+    background: #ff4d4d;
+}
