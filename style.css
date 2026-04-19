@@ -1,35 +1,66 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #0d0d0d;
-    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: white;
 }
 
-header {
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
     text-align: center;
+    background: rgba(0,0,0,0.6);
     padding: 40px;
-    background: #111;
+    border-radius: 10px;
 }
 
 .logo {
-    max-width: 150px;
+    width: 120px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color: #e63946;
+    font-size: 3em;
+    color: #ff2e2e;
 }
 
 section {
-    padding: 40px;
-    max-width: 800px;
-    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-h2 {
-    color: #e63946;
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #1a1a1a;
+}
+
+/* FORM */
 form {
+    max-width: 400px;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
@@ -37,8 +68,8 @@ form {
 input, button {
     margin: 10px 0;
     padding: 12px;
-    border: none;
     border-radius: 5px;
+    border: none;
 }
 
 input {
@@ -47,18 +78,17 @@ input {
 }
 
 button {
-    background: #e63946;
+    background: #ff2e2e;
     color: white;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
-    background: #ff4d5a;
+    background: #ff4d4d;
 }
 
 footer {
-    text-align: center;
     padding: 20px;
     background: #111;
 }
