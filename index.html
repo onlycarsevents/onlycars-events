@@ -270,11 +270,36 @@ input, textarea{
 </nav>
 
 <!-- HERO -->
-<header class="hero fade">
-  <div>
-    <h1>DRIVE THE UNREACHABLE</h1>
-    <p>Exclusive supercar experiences across Europe</p>
-    <button class="btn" onclick="scrollToSection('trips')">Explore</button>
+<header class="hero">
+  <div class="hero-slider">
+
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a0?q=80&w=2000&auto=format&fit=crop');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>BMW M PERFORMANCE</h1>
+        <p>Precision. Power. Emotion.</p>
+        <button class="btn" onclick="scrollToSection('trips')">Explore</button>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1603386329225-868f9b1ee6e5?q=80&w=2000&auto=format&fit=crop');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>TRACK DOMINANCE</h1>
+        <p>Built for ultimate control at speed.</p>
+        <button class="btn" onclick="scrollToSection('trips')">Discover</button>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2000&auto=format&fit=crop');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>M POWER LEGACY</h1>
+        <p>Engineering perfection on every road.</p>
+        <button class="btn" onclick="scrollToSection('trips')">Join</button>
+      </div>
+    </div>
+
   </div>
 </header>
 
@@ -399,6 +424,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
 
+function showSlide(index){
+  slides.forEach(s => s.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+function nextSlide(){
+  currentSlide++;
+  if(currentSlide >= slides.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000);
 </body>
 </html>
