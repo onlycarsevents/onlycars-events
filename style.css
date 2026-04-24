@@ -238,3 +238,36 @@ input, textarea{
     grid-template-columns:1fr;
   }
 }
+@media (max-width: 768px){
+
+  .hero{
+    height:100vh;
+    padding:0 20px;
+  }
+
+  .hero-content{
+    gap:12px;
+    max-width:100%;
+  }
+
+  .hero-content h1{
+    font-size:34px;
+    line-height:1.1;
+    letter-spacing:2px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+    line-height:1.5;
+    max-width:90%;
+  }
+
+  .btn{
+    padding:12px 26px;
+    font-size:14px;
+  }
+}
+.hero-content{
+  max-height:80vh;
+  overflow:hidden;
+}
