@@ -58,6 +58,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
 
   background:
@@ -66,16 +67,34 @@ body{
     center/cover no-repeat;
 }
 
+/* KLUCZ FIX */
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:18px; /* 🔥 TO ROZWIĄZUJE PROBLEM */
+  max-width:800px;
+  padding:0 20px;
+}
+
+.hero-content h1{
+  font-size:clamp(36px,5vw,70px);
+  letter-spacing:4px;
+  margin:0;
+}
+
 .hero-content p{
-  margin-top:18px;
+  margin:0;
   color:#b5b5b5;
   font-size:18px;
   line-height:1.6;
 }
 
-/* FIX BUTTON — żeby się nie zlewał */
+/* BUTTON CLEAN */
 .btn{
-  margin-top:35px;
+  margin-top:10px; /* już nie duży margin */
   padding:14px 34px;
 
   border:1px solid #c8a24a;
@@ -83,17 +102,13 @@ body{
   background:rgba(0,0,0,0.35);
 
   cursor:pointer;
-
   letter-spacing:1px;
   font-weight:500;
-
-  display:inline-block;
 
   backdrop-filter:blur(6px);
   transition:0.3s ease;
 }
 
-/* hover = premium feel */
 .btn:hover{
   background:#c8a24a;
   color:#000;
