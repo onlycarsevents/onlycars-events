@@ -46,23 +46,24 @@
   <h2>Upcoming Events</h2>
 
   <div class="grid">
-
+    
+    <div class="card">
+      <h3>Czech Republic Road Trip</h3>
+      <p>Poland - Czech Republic - Poland</p>
+      <button onclick="openModal()">Details</button>
+    </div>
+    
     <div class="card">
       <h3>Alps Edition</h3>
       <p>Austria • Italy • Switzerland</p>
-      <button onclick="openModal()">Details</button>
+      <button onclick="openModa2()">Details</button>
     </div>
 
     <div class="card">
       <h3>Dolomites Run</h3>
       <p>Italian mountain passes</p>
     </div>
-
-    <div class="card">
-      <h3>Stelvio Challenge</h3>
-      <p>Legendary alpine road experience</p>
-    </div>
-
+    
   </div>
 </section>
 
@@ -121,11 +122,17 @@
 </section>
 
 <!-- MODAL -->
-<div id="modal" class="modal">
+<div id="modal1" class="modal">
   <div class="modal-content">
-    <span onclick="closeModal()" class="close">×</span>
+    <span onclick="closeModal('modal1')" class="close">×</span>
+    <h2>Czech Republic Road Trip</h2>
+    <p>Poland - Czech Republic - Poland Road Trip which contains 250km of curvy roads with amazing views and potencial to push your car to the limit</p>
+  
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('modal2')" class="close">×</span>
     <h2>Alps Edition</h2>
-    <p>3-country supercar journey through Austria, Italy & Switzerland.</p>
+    <p>3-country sport cars journey through Austria, Italy & Switzerland.</p>
   </div>
 </div>
 
