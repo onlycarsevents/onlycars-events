@@ -1,4 +1,4 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,234 +7,186 @@ l<!DOCTYPE html>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Minimal base styles for stability */
+body { font-family: Poppins, sans-serif; margin:0; }
+section { padding:60px 20px; }
+.navbar { position:fixed; top:0; width:100%; background:#111; color:#fff; z-index:1000; }
+.nav-container { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; }
+.navbar ul { display:flex; gap:20px; list-style:none; }
+.navbar a { color:white; text-decoration:none; }
+.hero { height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; background:#000; color:white; }
+.cta { padding:10px 20px; background:#fff; color:#000; text-decoration:none; margin-top:20px; display:inline-block; }
+.trip-card { padding:20px; border:1px solid #ddd; margin:10px 0; }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.gallery-grid img { width:100%; }
+.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); }
+.modal-content { background:#fff; padding:20px; margin:10% auto; width:60%; }
+.review { padding:10px; border-bottom:1px solid #ddd; }
+</style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="navbar">
-    <div class="nav-container">
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <img src="logo.png" class="nav-logo">
-        <ul>
-            <li><a href="#trips">Trips</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#apply" class="nav-cta">Join</a></li>
-            <li><a href="#reviews">Community</a></li>
-        </ul>
-    </div>
+  <div class="nav-container">
+    <div onclick="toggleMenu()" style="cursor:pointer;">☰</div>
+    <div><strong>OnlyCars</strong></div>
+    <ul id="navLinks">
+      <li><a href="#trips">Trips</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#apply">Join</a></li>
+      <li><a href="#reviews">Community</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-    <div class="overlay">
-        <h1>Drive Beyond Limits</h1>
-        <p>Europe’s most iconic roads. One exclusive community.</p>
-        <a href="#trips" class="cta">Explore Trips</a>
-    </div>
+  <div>
+    <h1>Drive Beyond Limits</h1>
+    <p>Europe’s most iconic roads. Exclusive driving community.</p>
+    <a class="cta" href="#trips">Explore Trips</a>
+  </div>
 </header>
 
 <!-- TRIPS -->
-<section id="trips" class="trips">
-    <h2>Upcoming Experiences</h2>
+<section id="trips">
+  <h2>Upcoming Experiences</h2>
 
-    <div class="trip-card">
-        <h3>Alps Edition 2026</h3>
-        <p>Austria • Italy • Switzerland</p>
-        <button onclick="openModal()">Details</button>
-    </div>
+  <div class="trip-card">
+    <h3>Alps Edition 2026</h3>
+    <p>Austria • Italy • Switzerland</p>
+    <button onclick="openModal()">Details</button>
+  </div>
 
-    <div class="trip-card">
-        <h3>Dolomites Run</h3>
-        <p>Italy</p>
-        <button>Details</button>
-    </div>
+  <div class="trip-card">
+    <h3>Dolomites Run</h3>
+    <p>Italy</p>
+  </div>
 </section>
 
 <!-- SCHEDULE -->
-<section id="schedule" class="schedule">
-    <h2>Schedule</h2>
-
-    <div class="schedule-item">
-        <p><strong>01.05.2026</strong> — Opening Drive (Czech Republic)</p>
-    </div>
-
-    <div class="schedule-item">
-        <p><strong>15.06.2026</strong> — Alps Tour</p>
-    </div>
+<section id="schedule">
+  <h2>Schedule</h2>
+  <p><strong>01.05.2026</strong> — Opening Drive (CZ)</p>
+  <p><strong>15.06.2026</strong> — Alps Tour</p>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="gallery">
-    <h2>Moments</h2>
-
-    <div class="gallery-grid">
-        <img src="img1.jpg">
-        <img src="img2.jpg">
-        <img src="img3.jpg">
-    </div>
+<section id="gallery">
+  <h2>Moments</h2>
+  <div class="gallery-grid">
+    <img src="img1.jpg" alt="">
+    <img src="img2.jpg" alt="">
+    <img src="img3.jpg" alt="">
+  </div>
 </section>
 
 <!-- APPLY -->
-<section id="apply" class="form-section">
-    <h2>Join the Next Experience</h2>
+<section id="apply">
+  <h2>Join Experience</h2>
 
-    <form action="https://formspree.io/f/xrerkwkb" method="POST">
-
-        <input type="text" name="full_name" placeholder="Full Name" required>
-        <label>Date of Birth</label>
-        <input type="date" name="birth_date" required>
-        <input type="text" name="car_model" placeholder="Car Model" required>
-        <input type="number" name="car_power" placeholder="HP" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="url" name="car_photo" placeholder="Link to your car photo" required>
-
-        <button type="submit">Apply Now</button>
-    </form>
+  <form action="https://formspree.io/f/xrerkwkb" method="POST">
+    <input type="text" name="full_name" placeholder="Full Name" required>
+    <input type="date" name="birth_date" required>
+    <input type="text" name="car_model" placeholder="Car Model" required>
+    <input type="number" name="car_power" placeholder="HP" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="url" name="car_photo" placeholder="Car Photo URL" required>
+    <button type="submit">Apply</button>
+  </form>
 </section>
 
-<footer>
-    <p>© 2026 OnlyCars Events</p>
-</footer>
-<!-- NA SAMYM DOLE, PRZED </body> -->
-
 <!-- REVIEWS -->
-<section id="reviews" class="reviews">
-    <h2>Community Reviews</h2>
+<section id="reviews">
+  <h2>Community Reviews</h2>
 
-    <form id="reviewForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <textarea id="reviewText" placeholder="Your experience..." required></textarea>
-        <button type="submit">Add Review</button>
-    </form>
+  <form id="reviewForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <textarea id="reviewText" placeholder="Experience..." required></textarea>
+    <button type="submit">Add</button>
+  </form>
 
-    <div id="reviewsList"></div>
+  <div id="reviewsList"></div>
 </section>
 
 <!-- MODAL -->
 <div id="tripModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal">&times;</span>
-        <h2>Alps Edition 2026</h2>
-        <p>Detailed route through Austria, Italy and Switzerland.</p>
-        <p>Includes mountain passes and scenic stops.</p>
-    </div>
+  <div class="modal-content">
+    <span id="closeModal" style="cursor:pointer;">&times;</span>
+    <h2>Alps Edition 2026</h2>
+    <p>Scenic alpine routes across 3 countries.</p>
+  </div>
 </div>
 
 <!-- JS -->
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", () => {
 
-    /* SCROLL ANIMATION */
-    const elements = document.querySelectorAll("section, .trip-card");
+  // Smooth reveal animation (single instance, no duplicates)
+  const elements = document.querySelectorAll("section, .trip-card");
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-            }
-        });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = 1;
+        e.target.style.transform = "translateY(0)";
+      }
     });
+  });
 
-    elements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = "translateY(40px)";
-        el.style.transition = "0.6s";
-        observer.observe(el);
-    });
-
-    /* REVIEWS */
-    const form = document.getElementById("reviewForm");
-    const list = document.getElementById("reviewsList");
-
-    form.addEventListener("submit", function(e){
-        e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const text = document.getElementById("reviewText").value;
-
-        const review = document.createElement("div");
-        review.classList.add("review");
-        review.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
-
-        list.prepend(review);
-        form.reset();
-    });
-
-});
-
-/* MODAL */
-function openModal() {
-    document.getElementById("tripModal").style.display = "block";
-}
-function toggleMenu() {
-    document.querySelector(".navbar ul").classList.toggle("active");
-}
-document.addEventListener("click", function(e){
-    if(e.target.id === "closeModal"){
-        document.getElementById("tripModal").style.display = "none";
-    }
-});
-</script>
-
-</body>
-</html>
-</body>
-</html>
-<script>
-const elements = document.querySelectorAll("section, .trip-card, .review");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-});
-
-elements.forEach(el => {
+  elements.forEach(el => {
     el.style.opacity = 0;
-    el.style.transform = "translateY(40px)";
-    el.style.transition = "0.6s";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "0.6s ease";
     observer.observe(el);
-});
-</script>
-<div id="tripModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal">&times;</span>
-        <h2>Alps Edition 2026</h2>
-        <p>Detailed route through Austria, Italy and Switzerland.</p>
-        <p>Includes mountain passes, scenic stops and premium hotels.</p>
-    </div>
-</div>
-<script>
-const form = document.getElementById("reviewForm");
-const list = document.getElementById("reviewsList");
+  });
 
-form.addEventListener("submit", function(e){
+  // Reviews system (clean single instance)
+  const form = document.getElementById("reviewForm");
+  const list = document.getElementById("reviewsList");
+
+  form.addEventListener("submit", e => {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
     const text = document.getElementById("reviewText").value;
 
-    const review = document.createElement("div");
-    review.classList.add("review");
-    review.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
+    const div = document.createElement("div");
+    div.className = "review";
+    div.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
 
-    list.prepend(review);
-
+    list.prepend(div);
     form.reset();
+  });
+
 });
-</script>
-<script>
-function openModal() {
-    document.getElementById("tripModal").style.display = "block";
+
+// NAV toggle
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
 }
 
-document.getElementById("closeModal").onclick = function() {
-    document.getElementById("tripModal").style.display = "none";
+// Modal logic (safe + single binding)
+function openModal() {
+  document.getElementById("tripModal").style.display = "block";
 }
+
+document.getElementById("closeModal").onclick = () => {
+  document.getElementById("tripModal").style.display = "none";
+};
+
+window.onclick = e => {
+  if (e.target.id === "tripModal") {
+    e.target.style.display = "none";
+  }
+};
 </script>
+
+</body>
+</html>
