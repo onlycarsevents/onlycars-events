@@ -29,30 +29,68 @@ html, body{
 /* =========================
    NAV FIX (NIE UCIEKA + KLIKALNY)
    ========================= */
-nav{
+.navbar{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   z-index:9999;
+
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-nav ul{
+.nav-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 30px;
+}
+
+.navbar ul{
   display:flex;
   gap:25px;
-  align-items:center;
+  list-style:none;
 }
 
-nav ul li{
-  display:block;
-}
-
-nav a{
-  display:inline-block;
+.navbar a{
+  color:white;
+  text-decoration:none;
+  font-weight:300;
+  letter-spacing:1px;
   padding:8px 10px;
-  cursor:pointer;
-  position:relative;
-  z-index:10000;
+  display:inline-block;
+}
+
+.navbar a:hover{
+  color:#4aa3ff; /* BMW-ish blue accent */
+}
+
+/* MOBILE NAV FIX */
+@media (max-width:768px){
+  .navbar ul{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:65px;
+    right:20px;
+    background:#0b0b0b;
+    padding:15px;
+    border:1px solid #222;
+    width:200px;
+  }
+
+  .navbar ul.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+    font-size:24px;
+    cursor:pointer;
+    color:white;
+  }
 }
 
 /* MOBILE MENU FIX */
