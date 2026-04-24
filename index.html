@@ -232,14 +232,22 @@ button{
 <body>
 
 <!-- NAV -->
-<nav>
-  <div><strong style="color:var(--gold)">ONLYCARS</strong></div>
-  <ul>
-    <li><a href="#trips">Experiences</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#gallery">Moments</a></li>
-    <li><a href="#apply">Join</a></li>
-  </ul>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="logo" style="color:#4aa3ff;font-weight:600;">
+      BMW M Experience
+    </div>
+
+    <ul>
+      <li><a href="#trips">Trips</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#apply">Join</a></li>
+      <li><a href="#reviews">Community</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -365,6 +373,10 @@ const observer=new IntersectionObserver(entries=>{
 document.querySelectorAll(".fade").forEach(el=>{
   observer.observe(el);
 });
+<script>
+function toggleMenu(){
+  document.querySelector(".navbar ul").classList.toggle("active");
+}
 </script>
 
 </body>
