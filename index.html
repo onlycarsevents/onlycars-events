@@ -96,7 +96,88 @@ l<!DOCTYPE html>
 <footer>
     <p>© 2026 OnlyCars Events</p>
 </footer>
+<!-- NA SAMYM DOLE, PRZED </body> -->
 
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+    <h2>Community Reviews</h2>
+
+    <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="reviewText" placeholder="Your experience..." required></textarea>
+        <button type="submit">Add Review</button>
+    </form>
+
+    <div id="reviewsList"></div>
+</section>
+
+<!-- MODAL -->
+<div id="tripModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h2>Alps Edition 2026</h2>
+        <p>Detailed route through Austria, Italy and Switzerland.</p>
+        <p>Includes mountain passes and scenic stops.</p>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* SCROLL ANIMATION */
+    const elements = document.querySelectorAll("section, .trip-card");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    });
+
+    elements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(40px)";
+        el.style.transition = "0.6s";
+        observer.observe(el);
+    });
+
+    /* REVIEWS */
+    const form = document.getElementById("reviewForm");
+    const list = document.getElementById("reviewsList");
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const text = document.getElementById("reviewText").value;
+
+        const review = document.createElement("div");
+        review.classList.add("review");
+        review.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
+
+        list.prepend(review);
+        form.reset();
+    });
+
+});
+
+/* MODAL */
+function openModal() {
+    document.getElementById("tripModal").style.display = "block";
+}
+
+document.addEventListener("click", function(e){
+    if(e.target.id === "closeModal"){
+        document.getElementById("tripModal").style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
 </body>
 </html>
 <script>
