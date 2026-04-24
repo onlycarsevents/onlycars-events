@@ -41,14 +41,12 @@ l<!DOCTYPE html>
     <div class="trip-card">
         <h3>Alps Edition 2026</h3>
         <p>Austria • Italy • Switzerland</p>
-        <p>From €1,200</p>
-        <button>Details</button>
+        <button onclick="openModal()">Details</button>
     </div>
 
     <div class="trip-card">
         <h3>Dolomites Run</h3>
         <p>Italy</p>
-        <p>From €950</p>
         <button>Details</button>
     </div>
 </section>
@@ -58,7 +56,7 @@ l<!DOCTYPE html>
     <h2>Schedule</h2>
 
     <div class="schedule-item">
-        <p><strong>01.05.2026</strong> — Opening Drive (Poland)</p>
+        <p><strong>01.05.2026</strong> — Opening Drive (Czech Republic)</p>
     </div>
 
     <div class="schedule-item">
@@ -74,21 +72,6 @@ l<!DOCTYPE html>
         <img src="img1.jpg">
         <img src="img2.jpg">
         <img src="img3.jpg">
-    </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="reviews">
-    <h2>Community</h2>
-
-    <div class="review">
-        <p>"Best driving experience of my life."</p>
-        <span>— Michael, Porsche 911</span>
-    </div>
-
-    <div class="review">
-        <p>"Perfect organization and amazing people."</p>
-        <span>— Adam, BMW M4</span>
     </div>
 </section>
 
@@ -131,4 +114,51 @@ elements.forEach(el => {
     el.style.transition = "0.6s";
     observer.observe(el);
 });
+</script>
+<section id="reviews" class="reviews">
+    <h2>Community Reviews</h2>
+
+    <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="reviewText" placeholder="Your experience..." required></textarea>
+        <button type="submit">Add Review</button>
+    </form>
+
+    <div id="reviewsList"></div>
+</section>
+<div id="tripModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h2>Alps Edition 2026</h2>
+        <p>Detailed route through Austria, Italy and Switzerland.</p>
+        <p>Includes mountain passes, scenic stops and premium hotels.</p>
+    </div>
+</div>
+<script>
+const form = document.getElementById("reviewForm");
+const list = document.getElementById("reviewsList");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const text = document.getElementById("reviewText").value;
+
+    const review = document.createElement("div");
+    review.classList.add("review");
+    review.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
+
+    list.prepend(review);
+
+    form.reset();
+});
+</script>
+<script>
+function openModal() {
+    document.getElementById("tripModal").style.display = "block";
+}
+
+document.getElementById("closeModal").onclick = function() {
+    document.getElementById("tripModal").style.display = "none";
+}
 </script>
