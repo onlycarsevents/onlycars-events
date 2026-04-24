@@ -1,8 +1,19 @@
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: #0a0a0a;
-    color: white;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+section {
+    padding: 120px 20px;
+    text-align: center;
 }
 
 /* NAVBAR */
@@ -11,31 +22,31 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 15px 50px;
 }
 
 .nav-logo {
-    width: 120px;
+    width: 110px;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 .navbar a {
-    color: white;
+    color: #ccc;
     text-decoration: none;
-    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -43,78 +54,116 @@ body {
     color: #ff2e2e;
 }
 
+.nav-cta {
+    padding: 8px 18px;
+    border: 1px solid #ff2e2e;
+    border-radius: 20px;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738') center/cover no-repeat;
 }
 
 .overlay {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(0,0,0,0.6) 0%, #000 100%);
     text-align: center;
-    background: rgba(0,0,0,0.6);
-    padding: 60px;
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
 }
 
-.logo {
-    width: 220px;
-    margin-bottom: 20px;
+.hero h1 {
+    font-size: 4em;
+    letter-spacing: 2px;
 }
 
-h1 {
-    font-size: 3.5em;
-    margin: 10px 0;
+.hero p {
+    color: #aaa;
+    margin-top: 10px;
 }
 
+/* CTA */
 .cta {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 30px;
-    background: #ff2e2e;
-    color: white;
-    text-decoration: none;
+    margin-top: 30px;
+    padding: 14px 35px;
+    background: linear-gradient(45deg, #ff2e2e, #ff6b6b);
     border-radius: 30px;
+    text-decoration: none;
+    color: white;
     transition: 0.3s;
 }
 
 .cta:hover {
-    background: #ff4d4d;
+    transform: scale(1.05);
 }
 
-/* SECTIONS */
-section {
-    padding: 100px 20px;
-    text-align: center;
+/* TRIPS */
+.trips {
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* EXPERIENCE */
-.experience {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.exp-card {
-    background: #111;
+.trip-card {
+    background: linear-gradient(145deg, #111, #1a1a1a);
     padding: 30px;
+    margin: 20px;
     border-radius: 15px;
-    width: 280px;
+    display: inline-block;
+    width: 300px;
     transition: 0.3s;
 }
 
-.exp-card:hover {
-    transform: translateY(-10px);
-    background: #1a1a1a;
+.trip-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 46, 46, 0.3);
+}
+
+/* SCHEDULE */
+.schedule-item {
+    background: #111;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-grid img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* REVIEWS */
+.review {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    font-style: italic;
 }
 
 /* FORM */
 form {
-    max-width: 400px;
+    max-width: 420px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -128,7 +177,7 @@ input, button {
 }
 
 input {
-    background: #222;
+    background: #1a1a1a;
     color: white;
 }
 
@@ -143,29 +192,14 @@ button:hover {
     background: #ff4d4d;
 }
 
+/* FOOTER */
 footer {
-    padding: 20px;
-    background: #111;
+    padding: 30px;
+    background: #0f0f0f;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-html {
-    scroll-padding-top: 80px;
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 10px 20px;
-    }
-
-    .nav-logo {
-        width: 90px;
-    }
-
-    .navbar ul {
-        gap: 15px;
-        font-size: 14px;
-    }
-}
+/* IG BUTTON */
 .ig-fixed {
     position: fixed;
     bottom: 20px;
@@ -182,5 +216,24 @@ html {
 
 .ig-fixed:hover {
     transform: scale(1.1);
-    background: #ff4d4d;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .trip-card {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .nav-container {
+        padding: 10px 20px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        font-size: 14px;
+    }
 }
