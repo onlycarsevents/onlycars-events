@@ -17,7 +17,9 @@
 <nav class="navbar">
   <div class="container nav-container">
 
-    <div class="logo">OnlyCars</div>
+    <div class="logo">
+  Only<span>Cars</span>
+</div>
 
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
@@ -34,10 +36,11 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>ONLYCARS EVENTS</h1>
-    <p>Sport cars journeys across the most iconic mountain roads in Europe</p>
-    <a href="#trips" class="btn">Explore Events</a>
+    <h1>DRIVE. CONNECT. ESCAPE.</h1>
+    <p>Exclusive sports car rallies through Europe's most iconic mountain roads</p>
+    <a href="#apply" class="btn">JOIN THE DRIVE</a>
   </div>
 </header>
 
@@ -48,10 +51,10 @@
   <div class="grid">
     
     <div class="card">
-      <h3>Czech Republic Road Trip</h3>
-      <p>Poland - Czech Republic - Poland</p>
-      <button onclick="openModal()">Details</button>
-    </div>
+  <h3>Czech Republic Road Trip</h3>
+  <p>Poland → Czech Republic → Poland</p>
+  <button class="btn-secondary" onclick="openModal()">VIEW DETAILS</button>
+</div>
     
     <div class="card">
       <h3>Alps Edition</h3>
@@ -104,7 +107,7 @@
 
   <input type="hidden" name="_redirect" value="https://onlycarsevents.github.io/onlycars-events/thanks.html">
 
-  <button type="submit">Apply Now</button>
+  <button type="submit" class="btn">APPLY NOW</button>
 </form>
 </section>
 
@@ -142,7 +145,11 @@ function toggleMenu(){
 }
 
 function openModal(){
-  document.getElementById("modal").style.display="flex";
+  document.getElementById("modal1").style.display="flex";
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display="none";
 }
 
 function closeModal(){
