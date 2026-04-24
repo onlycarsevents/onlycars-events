@@ -3,311 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OnlyCars Experience</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;700&display=swap" rel="stylesheet">
+<title>OnlyCars Events</title>
 
-<style>
-:root{
-  --bg:#070707;
-  --card:#111;
-  --gold:#c8a24a;
-  --text:#eaeaea;
-  --muted:#9a9a9a;
-}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Montserrat,sans-serif;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-/* NAV */
-.navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:9999;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
-}
-
-.nav-container{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-}
-
-.navbar ul{
-  display:flex;
-  gap:25px;
-  list-style:none;
-}
-
-.navbar a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:300;
-}
-
-.navbar a:hover{
-  color:var(--gold);
-}
-
-/* MOBILE MENU */
-.menu-toggle{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-  color:white;
-}
-
-@media(max-width:768px){
-
-  .menu-toggle{
-    display:block;
-  }
-
-  .navbar ul{
-    display:none;
-    position:absolute;
-    top:65px;
-    right:20px;
-    background:#0b0b0b;
-    flex-direction:column;
-    padding:15px;
-    width:200px;
-    border:1px solid #222;
-  }
-
-  .navbar ul.active{
-    display:flex;
-  }
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.4), #000),
-    url('hero.jpg') center/cover no-repeat;
-}
-
-.hero h1{
-  font-size:64px;
-  letter-spacing:4px;
-}
-
-.hero p{
-  margin-top:20px;
-  color:var(--muted);
-}
-
-.btn{
-  margin-top:30px;
-  padding:14px 30px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  background:transparent;
-  cursor:pointer;
-}
-
-/* SECTIONS */
-section{
-  padding:120px 10%;
-}
-
-h2{
-  font-size:36px;
-  margin-bottom:40px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:var(--card);
-  padding:25px;
-  border:1px solid #1f1f1f;
-}
-
-.card h3{
-  color:var(--gold);
-}
-
-/* TIMELINE */
-.timeline{
-  border-left:1px solid #333;
-  padding-left:20px;
-}
-
-.event{
-  margin-bottom:20px;
-  color:var(--muted);
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.gallery img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
-
-/* FORM FIX */
-form{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:500px;
-}
-
-input, textarea{
-  width:100%;
-  padding:12px;
-  background:#0f0f0f;
-  border:1px solid #222;
-  color:white;
-}
-
-/* REVIEWS */
-.review{
-  padding:12px;
-  border-left:2px solid var(--gold);
-  margin-bottom:10px;
-  color:var(--muted);
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.85);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-content{
-  background:#111;
-  padding:40px;
-  max-width:600px;
-  border:1px solid var(--gold);
-}
-
-.close{
-  float:right;
-  cursor:pointer;
-  color:var(--gold);
-}
-
-/* ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.8s;
-}
-
-.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero h1{
-    font-size:38px;
-  }
-
-  .gallery{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="nav-container">
+  <div class="container nav-container">
+
+    <div class="logo">OnlyCars</div>
+
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <div style="color:#c8a24a;font-weight:600;">
-      OnlyCars
-    </div>
-
-    <ul>
+    <ul class="nav-links">
       <li><a href="#trips">Trips</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#apply">Join</a></li>
-      <li><a href="#reviews">Community</a></li>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="#reviews">Reviews</a></li>
     </ul>
+
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-slider">
-
-    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a0?q=80&w=2000&auto=format&fit=crop');">
-      <div class="overlay"></div>
-      <div class="content">
-        <h1>BMW M PERFORMANCE</h1>
-        <p>Precision. Power. Emotion.</p>
-        <button class="btn" onclick="scrollToSection('trips')">Explore</button>
-      </div>
-    </div>
-
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1603386329225-868f9b1ee6e5?q=80&w=2000&auto=format&fit=crop');">
-      <div class="overlay"></div>
-      <div class="content">
-        <h1>TRACK DOMINANCE</h1>
-        <p>Built for ultimate control at speed.</p>
-        <button class="btn" onclick="scrollToSection('trips')">Discover</button>
-      </div>
-    </div>
-
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2000&auto=format&fit=crop');">
-      <div class="overlay"></div>
-      <div class="content">
-        <h1>M POWER LEGACY</h1>
-        <p>Engineering perfection on every road.</p>
-        <button class="btn" onclick="scrollToSection('trips')">Join</button>
-      </div>
-    </div>
-
+  <div class="hero-content">
+    <h1>ONLYCARS EXPERIENCE</h1>
+    <p>Supercar journeys across the most iconic mountain roads in Europe</p>
+    <a href="#trips" class="btn">Explore Events</a>
   </div>
 </header>
 
 <!-- TRIPS -->
-<section id="trips" class="fade">
-  <h2>EXPERIENCES</h2>
+<section id="trips" class="section">
+  <h2>Upcoming Experiences</h2>
 
   <div class="grid">
+
     <div class="card">
       <h3>Alps Edition</h3>
       <p>Austria • Italy • Switzerland</p>
@@ -316,129 +55,105 @@ input, textarea{
 
     <div class="card">
       <h3>Dolomites Run</h3>
-      <p>Italian mountains</p>
+      <p>Italian mountain passes</p>
     </div>
+
+    <div class="card">
+      <h3>Stelvio Challenge</h3>
+      <p>Legendary alpine road experience</p>
+    </div>
+
   </div>
 </section>
 
 <!-- SCHEDULE -->
-<section id="schedule" class="fade">
-  <h2>SCHEDULE</h2>
+<section id="schedule" class="section dark">
+  <h2>Schedule</h2>
 
   <div class="timeline">
-    <div class="event">01.05 — Opening Drive</div>
-    <div class="event">15.06 — Alps Tour</div>
+    <div class="event">01.05.2026 — Opening Drive (Czech Republic)</div>
+    <div class="event">15.06.2026 — Alps Tour</div>
+    <div class="event">20.09.2026 — Dolomites Finale</div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="fade">
-  <h2>GALLERY</h2>
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
 
   <div class="gallery">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
+    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
   </div>
 </section>
 
 <!-- APPLY -->
-<section id="apply" class="fade">
-  <h2>JOIN</h2>
+<section id="apply" class="section dark">
+  <h2>Join Experience</h2>
 
   <form>
-    <input placeholder="Full Name">
-    <label>Date of Birth</label>
-    <input type="date" name="birth_date" required>
-    <input placeholder="Car Model">
-    <input placeholder="HP">
-    <input placeholder="Email">
-    <input type="url" name="car_photo" placeholder="Link to your car photo" required>
-    <button class="btn">Apply</button>
+    <input type="text" placeholder="Full Name" required>
+    <input type="date" required>
+    <input type="text" placeholder="Car Model" required>
+    <input type="number" placeholder="Horsepower" required>
+    <input type="email" placeholder="Email" required>
+    <input type="url" placeholder="Car Photo Link" required>
+    <button type="submit">Apply Now</button>
   </form>
 </section>
 
 <!-- REVIEWS -->
-<section class="fade">
-  <h2>COMMUNITY</h2>
+<section id="reviews" class="section">
+  <h2>Community Reviews</h2>
 
-  <div id="reviews"></div>
+  <div id="reviewsList"></div>
 
-  <input id="name" placeholder="Name">
-  <textarea id="text" placeholder="Experience"></textarea>
-  <button onclick="addReview()">Add</button>
+  <div class="review-form">
+    <input id="name" placeholder="Your Name">
+    <textarea id="text" placeholder="Your experience"></textarea>
+    <button onclick="addReview()">Add Review</button>
+  </div>
 </section>
 
 <!-- MODAL -->
-<div class="modal" id="modal">
+<div id="modal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">X</span>
+    <span onclick="closeModal()" class="close">×</span>
     <h2>Alps Edition</h2>
-    <p>Premium driving experience across Europe.</p>
+    <p>3-country supercar journey through Austria, Italy & Switzerland.</p>
   </div>
 </div>
 
-<!-- JS (CLEAN FIXED) -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  window.scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
-  };
-
-  window.toggleMenu = () => {
-    document.querySelector(".navbar ul").classList.toggle("active");
-  };
-
-  window.openModal = () => {
-    document.getElementById("modal").style.display="flex";
-  };
-
-  window.closeModal = () => {
-    document.getElementById("modal").style.display="none";
-  };
-
-  window.addReview = () => {
-    const name = document.getElementById("name").value;
-    const text = document.getElementById("text").value;
-
-    if(!name || !text) return;
-
-    const div = document.createElement("div");
-    div.className = "review";
-    div.innerHTML = `"${text}" — ${name}`;
-
-    document.getElementById("reviews").prepend(div);
-
-    document.getElementById("name").value = "";
-    document.getElementById("text").value = "";
-  };
-
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting) e.target.classList.add("show");
-    });
-  });
-
-  document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-
-});
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(i){
-  slides.forEach(s => s.classList.remove("active"));
-  if(slides[i]) slides[i].classList.add("active");
+function toggleMenu(){
+  document.querySelector(".nav-links").classList.toggle("active");
 }
 
-function nextSlide(){
-  currentSlide++;
-  if(currentSlide >= slides.length) currentSlide = 0;
-  showSlide(currentSlide);
+function openModal(){
+  document.getElementById("modal").style.display="flex";
 }
 
-setInterval(nextSlide, 5000);
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+function addReview(){
+  const name=document.getElementById("name").value;
+  const text=document.getElementById("text").value;
+
+  if(!name || !text) return;
+
+  const div=document.createElement("div");
+  div.className="review";
+  div.innerHTML=`"${text}" — ${name}`;
+
+  document.getElementById("reviewsList").prepend(div);
+
+  document.getElementById("name").value="";
+  document.getElementById("text").value="";
+}
 </script>
+
 </body>
 </html>
