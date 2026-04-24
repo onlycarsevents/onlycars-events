@@ -66,25 +66,39 @@ body{
     center/cover no-repeat;
 }
 
-.hero-content h1{
-  font-size:clamp(36px,5vw,70px);
-  letter-spacing:4px;
-}
-
 .hero-content p{
-  color:#aaa;
-  margin-top:15px;
+  margin-top:18px;
+  color:#b5b5b5;
+  font-size:18px;
+  line-height:1.6;
 }
 
+/* FIX BUTTON — żeby się nie zlewał */
 .btn{
-  margin-top:25px;
-  padding:12px 30px;
+  margin-top:35px;
+  padding:14px 34px;
+
   border:1px solid #c8a24a;
   color:#c8a24a;
-  background:transparent;
+  background:rgba(0,0,0,0.35);
+
   cursor:pointer;
+
+  letter-spacing:1px;
+  font-weight:500;
+
+  display:inline-block;
+
+  backdrop-filter:blur(6px);
+  transition:0.3s ease;
 }
 
+/* hover = premium feel */
+.btn:hover{
+  background:#c8a24a;
+  color:#000;
+  transform:translateY(-2px);
+}
 /* SECTIONS */
 .section{
   padding:120px 10%;
