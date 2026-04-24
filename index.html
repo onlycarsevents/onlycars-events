@@ -14,6 +14,7 @@ l<!DOCTYPE html>
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <img src="logo.png" class="nav-logo">
         <ul>
             <li><a href="#trips">Trips</a></li>
@@ -168,7 +169,9 @@ document.addEventListener("DOMContentLoaded", function(){
 function openModal() {
     document.getElementById("tripModal").style.display = "block";
 }
-
+function toggleMenu() {
+    document.querySelector(".navbar ul").classList.toggle("active");
+}
 document.addEventListener("click", function(e){
     if(e.target.id === "closeModal"){
         document.getElementById("tripModal").style.display = "none";
