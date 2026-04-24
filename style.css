@@ -179,7 +179,7 @@ h2{
    GALLERY
    ========================= */
 .gallery{
-  display:grid;
+  display:none;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
