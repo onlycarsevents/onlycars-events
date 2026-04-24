@@ -423,13 +423,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
 });
-</script>
+<script>
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 
-function showSlide(index){
+function showSlide(i){
   slides.forEach(s => s.classList.remove("active"));
-  slides[index].classList.add("active");
+  if(slides[i]) slides[i].classList.add("active");
 }
 
 function nextSlide(){
@@ -439,5 +439,6 @@ function nextSlide(){
 }
 
 setInterval(nextSlide, 5000);
+</script>
 </body>
 </html>
