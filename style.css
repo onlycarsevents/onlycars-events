@@ -1,176 +1,231 @@
 /* =========================
-   ONLYCARS MOBILE STYLES
-   Premium Automotive Landing
+   ONLYCARS FIXED PREMIUM UI
    ========================= */
 
-/* GLOBAL SAFETY */
+/* GLOBAL SAFETY FIX (KLUCZOWE) */
 html, body{
   max-width:100%;
   overflow-x:hidden;
 }
 
-/* TABLET */
-@media (max-width: 1024px){
-
-  nav{
-    padding:15px 30px;
-  }
-
-  nav ul{
-    gap:20px;
-  }
-
-  .hero h1{
-    font-size:52px;
-  }
-
-  section{
-    padding:100px 6%;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
+/* =========================
+   HERO BACKGROUND FIX
+   ========================= */
+.hero{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.95)),
+    url("hero-car.jpg") center/cover no-repeat;
 }
 
-/* MOBILE */
-@media (max-width: 768px){
+/* =========================
+   NAV FIX (NIE UCIEKA + KLIKALNY)
+   ========================= */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+}
 
-  /* NAV */
+nav ul{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+nav ul li{
+  display:block;
+}
+
+nav a{
+  display:inline-block;
+  padding:8px 10px;
+  cursor:pointer;
+  position:relative;
+  z-index:10000;
+}
+
+/* MOBILE MENU FIX */
+@media (max-width:768px){
+
   nav{
     padding:15px 20px;
   }
 
   nav ul{
-    display:none; /* proste ukrycie desktop menu */
+    display:none;
     flex-direction:column;
     position:absolute;
     top:70px;
     right:20px;
-    background:#0a0a0a;
-    padding:20px;
+    background:#0b0b0b;
     border:1px solid #222;
-    width:200px;
+    padding:15px;
+    width:220px;
   }
 
   nav ul.active{
     display:flex;
   }
+}
 
-  /* HERO */
-  .hero h1{
-    font-size:36px;
-    letter-spacing:3px;
-    line-height:1.2;
-  }
+/* =========================
+   HERO TEXT FIX (UCIEKAJĄCE NAGŁÓWKI)
+   ========================= */
+.hero{
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-  .hero p{
-    font-size:14px;
-  }
+.hero h1{
+  font-size:clamp(28px, 5vw, 64px);
+  line-height:1.1;
+  text-align:center;
+  max-width:90%;
+  margin:0 auto;
+}
 
-  .btn{
-    padding:12px 24px;
-    font-size:14px;
-  }
+.hero p{
+  max-width:600px;
+  margin:20px auto 0 auto;
+}
 
-  /* SECTIONS */
-  section{
-    padding:80px 20px;
-  }
+/* =========================
+   BUTTON FIX (DETAILS / CTA NIE ROZJEŻDŻA SIĘ)
+   ========================= */
+button, .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+}
 
-  h2{
-    font-size:28px;
-  }
+.trip-card button{
+  margin-top:15px;
+  padding:10px 18px;
+  width:auto;
+}
 
-  /* GRID (TRIPS) */
-  .grid{
-    grid-template-columns:1fr;
-  }
+/* =========================
+   TRIP CARDS FIX
+   ========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
-  /* CARDS */
-  .card{
-    padding:20px;
-  }
+.card, .trip-card{
+  min-height:140px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 
-  .card h3{
-    font-size:18px;
-  }
+/* =========================
+   SCHEDULE FIX
+   ========================= */
+.timeline{
+  border-left:1px solid #333;
+  padding-left:20px;
+}
 
-  /* TIMELINE */
-  .timeline{
-    padding-left:15px;
-  }
+.event{
+  margin-bottom:18px;
+  word-wrap:break-word;
+}
 
-  .event{
-    font-size:14px;
-  }
+/* =========================
+   GALLERY FIX
+   ========================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
 
-  /* GALLERY */
-  .gallery{
-    grid-template-columns:1fr;
-  }
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
 
-  .gallery img{
-    height:200px;
-  }
+/* =========================
+   FORM FIX (UCINANE INPUTY - KLUCZOWE)
+   ========================= */
+form{
+  width:100%;
+  max-width:500px;
+}
 
-  /* FORM */
-  form{
-    width:100%;
-  }
+input, textarea{
+  width:100%;
+  display:block;
+  padding:12px;
+  box-sizing:border-box;
+  font-size:14px;
+}
+
+/* FIX NA UCINANE INPUTY NA MOBILE */
+@media (max-width:768px){
 
   input, textarea{
-    font-size:14px;
+    width:100%;
+    font-size:16px;
+  }
+
+  form{
+    padding-right:0;
   }
 
   button{
     width:100%;
   }
-
-  /* REVIEWS */
-  .review{
-    font-size:14px;
-  }
-
-  /* MODAL */
-  .modal-content{
-    width:90%;
-    padding:20px;
-  }
 }
 
-/* SMALL PHONES */
-@media (max-width: 480px){
-
-  .hero h1{
-    font-size:28px;
-  }
-
-  h2{
-    font-size:24px;
-  }
-
-  nav{
-    padding:12px 15px;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
-
-  .card{
-    padding:16px;
-  }
+/* =========================
+   REVIEWS FIX
+   ========================= */
+.review{
+  padding:12px;
+  border-left:2px solid var(--accent, #c8a24a);
+  margin-bottom:10px;
 }
 
-/* TOUCH OPTIMIZATION */
-button, .btn{
+/* =========================
+   MODAL FIX
+   ========================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-content{
+  width:min(600px,90%);
+  padding:30px;
+  background:#111;
+  border:1px solid #c8a24a;
+}
+
+/* =========================
+   TOUCH FIX
+   ========================= */
+button, a{
   touch-action:manipulation;
 }
 
-/* SMOOTHER MOBILE TEXT */
-body{
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+/* =========================
+   FINAL SAFETY FIX
+   ========================= */
+section{
+  position:relative;
+  z-index:1;
 }
