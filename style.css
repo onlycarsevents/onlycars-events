@@ -252,3 +252,42 @@ section{
   position:relative;
   z-index:1;
 }
+.form-section form{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.form-section input,
+.form-section textarea{
+  width:100%;
+  padding:14px;
+  background:#0f0f0f;
+  border:1px solid #222;
+  color:white;
+  font-size:15px;
+  border-radius:6px;
+  box-sizing:border-box;
+}
+
+.form-section input:focus,
+.form-section textarea:focus{
+  outline:none;
+  border-color:#4aa3ff;
+}
+
+/* FIX IOS INPUT ZOOM + UCIĘCIA */
+@media (max-width:768px){
+  .form-section input,
+  .form-section textarea{
+    font-size:16px;
+  }
+
+  .form-section button{
+    width:100%;
+    padding:14px;
+  }
+}
