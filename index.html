@@ -3,189 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OnlyCars Events</title>
+<title>OnlyCars Experience</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* Minimal base styles for stability */
-body { font-family: Poppins, sans-serif; margin:0; }
-section { padding:60px 20px; }
-.navbar { position:fixed; top:0; width:100%; background:#111; color:#fff; z-index:1000; }
-.nav-container { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; }
-.navbar ul { display:flex; gap:20px; list-style:none; }
-.navbar a { color:white; text-decoration:none; }
-.hero { height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; background:#000; color:white; }
-.cta { padding:10px 20px; background:#fff; color:#000; text-decoration:none; margin-top:20px; display:inline-block; }
-.trip-card { padding:20px; border:1px solid #ddd; margin:10px 0; }
-.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.gallery-grid img { width:100%; }
-.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); }
-.modal-content { background:#fff; padding:20px; margin:10% auto; width:60%; }
-.review { padding:10px; border-bottom:1px solid #ddd; }
-</style>
+:root{
+  --bg:#070707;
+  --card:#111;
+  --gold:#c8a24a;
+  --text:#eaeaea;
+  --muted:#9a9a9a;
+}
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat,sans-serif;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:300;
+  letter-spacing:1px;
+}
+
+nav a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.4), #000),
+    url('hero.jpg') center/cover;
+}
+
+.hero h1{
+  font-size:64px;
+  letter-spacing:4px;
+}
+
+.hero p{
+  margin-top:20px;
+  color:var(--muted);
+}
+
+.btn{
+  margin-top:30px;
+  padding:14px 30px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  background:transparent;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* SECTIONS */
+section{
+  padding:120px 10%;
+}
+
+h2{
+  font-size:36px;
+  margin-bottom:40px;
+  letter-spacing:2px;
+}
+
+/* TRIPS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border:1px solid #1f1f1f;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+}
+
+.card h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+/* SCHEDULE */
+.timeline{
+  border-left:1px solid #333;
+  padding-left:20px;
+}
+
+.event{
+  margin-bottom:20px;
+  color:var(--muted);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  filter:grayscale(20%);
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  filter:grayscale(0);
+  transform:scale(1.02);
+}
+
+/* FORM */
+form{
+  display:grid;
+  gap:15px;
+  max-width:500px;
+}
+
+input,textarea{
+  padding:12px;
+  background:#0f0f0f;
+  border:1px solid #222;
+  color:white;
+}
+
+button{
+  padding:14px;
+  background:var(--gold);
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* REVIEWS */
+.review{
+  padding:15px;
+  border-left:2px solid var(--gold);
+  margin-bottom:10px;
+  color:var(--muted);
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-content{
+  background:#111;
+  padding:40px;
+  max-width:600px;
+  border:1px solid var(--gold);
+}
+
+.close{
+  float:right;
+  cursor:pointer;
+  color:var(--gold);
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:40px;}
+  nav{padding:15px 20px;}
+  .gallery{grid-template-columns:1fr;}
+}
+</style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div onclick="toggleMenu()" style="cursor:pointer;">☰</div>
-    <div><strong>OnlyCars</strong></div>
-    <ul id="navLinks">
-      <li><a href="#trips">Trips</a></li>
-      <li><a href="#schedule">Schedule</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#apply">Join</a></li>
-      <li><a href="#reviews">Community</a></li>
-    </ul>
-  </div>
+<nav>
+  <div><strong style="color:var(--gold)">ONLYCARS</strong></div>
+  <ul>
+    <li><a href="#trips">Experiences</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#gallery">Moments</a></li>
+    <li><a href="#apply">Join</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero fade">
   <div>
-    <h1>Drive Beyond Limits</h1>
-    <p>Europe’s most iconic roads. Exclusive driving community.</p>
-    <a class="cta" href="#trips">Explore Trips</a>
+    <h1>DRIVE THE UNREACHABLE</h1>
+    <p>Exclusive supercar experiences across Europe</p>
+    <button class="btn" onclick="scrollToSection('trips')">Explore</button>
   </div>
 </header>
 
 <!-- TRIPS -->
-<section id="trips">
-  <h2>Upcoming Experiences</h2>
+<section id="trips" class="fade">
+  <h2>EXPERIENCES</h2>
 
-  <div class="trip-card">
-    <h3>Alps Edition 2026</h3>
-    <p>Austria • Italy • Switzerland</p>
-    <button onclick="openModal()">Details</button>
-  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Alps Edition</h3>
+      <p>Austria • Italy • Switzerland</p>
+      <button onclick="openModal()">Details</button>
+    </div>
 
-  <div class="trip-card">
-    <h3>Dolomites Run</h3>
-    <p>Italy</p>
+    <div class="card">
+      <h3>Dolomites Run</h3>
+      <p>Italian mountain passes</p>
+    </div>
+
+    <div class="card">
+      <h3>Coastal Drive</h3>
+      <p>French Riviera route</p>
+    </div>
   </div>
 </section>
 
 <!-- SCHEDULE -->
-<section id="schedule">
-  <h2>Schedule</h2>
-  <p><strong>01.05.2026</strong> — Opening Drive (CZ)</p>
-  <p><strong>15.06.2026</strong> — Alps Tour</p>
+<section id="schedule" class="fade">
+  <h2>SCHEDULE</h2>
+
+  <div class="timeline">
+    <div class="event">01.05 — Opening Drive (Czech Republic)</div>
+    <div class="event">15.06 — Alps Tour</div>
+    <div class="event">20.09 — Riviera Finale</div>
+  </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
-  <h2>Moments</h2>
-  <div class="gallery-grid">
-    <img src="img1.jpg" alt="">
-    <img src="img2.jpg" alt="">
-    <img src="img3.jpg" alt="">
+<section id="gallery" class="fade">
+  <h2>GALLERY</h2>
+
+  <div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
   </div>
 </section>
 
 <!-- APPLY -->
-<section id="apply">
-  <h2>Join Experience</h2>
+<section id="apply" class="fade">
+  <h2>JOIN EXPERIENCE</h2>
 
-  <form action="https://formspree.io/f/xrerkwkb" method="POST">
-    <input type="text" name="full_name" placeholder="Full Name" required>
-    <input type="date" name="birth_date" required>
-    <input type="text" name="car_model" placeholder="Car Model" required>
-    <input type="number" name="car_power" placeholder="HP" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="url" name="car_photo" placeholder="Car Photo URL" required>
-    <button type="submit">Apply</button>
+  <form>
+    <input placeholder="Full Name">
+    <input placeholder="Car Model">
+    <input placeholder="HP">
+    <input placeholder="Email">
+    <button>Apply</button>
   </form>
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews">
-  <h2>Community Reviews</h2>
+<section class="fade">
+  <h2>COMMUNITY</h2>
 
-  <form id="reviewForm">
-    <input type="text" id="name" placeholder="Name" required>
-    <textarea id="reviewText" placeholder="Experience..." required></textarea>
-    <button type="submit">Add</button>
-  </form>
+  <div id="reviews"></div>
 
-  <div id="reviewsList"></div>
+  <input id="name" placeholder="Name">
+  <textarea id="text" placeholder="Experience"></textarea>
+  <button onclick="addReview()">Add</button>
 </section>
 
 <!-- MODAL -->
-<div id="tripModal" class="modal">
+<div class="modal" id="modal">
   <div class="modal-content">
-    <span id="closeModal" style="cursor:pointer;">&times;</span>
-    <h2>Alps Edition 2026</h2>
-    <p>Scenic alpine routes across 3 countries.</p>
+    <span class="close" onclick="closeModal()">X</span>
+    <h2>Alps Edition</h2>
+    <p>Premium route across 3 countries with curated hotels and supercar support fleet.</p>
   </div>
 </div>
 
-<!-- JS -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+// smooth scroll
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
 
-  // Smooth reveal animation (single instance, no duplicates)
-  const elements = document.querySelectorAll("section, .trip-card");
+// modal
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = 1;
-        e.target.style.transform = "translateY(0)";
-      }
-    });
+// reviews
+function addReview(){
+  const name=document.getElementById("name").value;
+  const text=document.getElementById("text").value;
+
+  const div=document.createElement("div");
+  div.className="review";
+  div.innerHTML=`"${text}" — ${name}`;
+
+  document.getElementById("reviews").prepend(div);
+}
+
+// scroll animation
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("show");
   });
-
-  elements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "0.6s ease";
-    observer.observe(el);
-  });
-
-  // Reviews system (clean single instance)
-  const form = document.getElementById("reviewForm");
-  const list = document.getElementById("reviewsList");
-
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const text = document.getElementById("reviewText").value;
-
-    const div = document.createElement("div");
-    div.className = "review";
-    div.innerHTML = `<p>"${text}"</p><span>— ${name}</span>`;
-
-    list.prepend(div);
-    form.reset();
-  });
-
 });
 
-// NAV toggle
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-
-// Modal logic (safe + single binding)
-function openModal() {
-  document.getElementById("tripModal").style.display = "block";
-}
-
-document.getElementById("closeModal").onclick = () => {
-  document.getElementById("tripModal").style.display = "none";
-};
-
-window.onclick = e => {
-  if (e.target.id === "tripModal") {
-    e.target.style.display = "none";
-  }
-};
+document.querySelectorAll(".fade").forEach(el=>{
+  observer.observe(el);
+});
 </script>
 
 </body>
