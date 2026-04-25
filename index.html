@@ -18,8 +18,8 @@
   <div class="container nav-container">
 
     <div class="logo">
-  Only<span>Cars</span>
-</div>
+      Only<span>Cars</span>
+    </div>
 
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
@@ -39,9 +39,9 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>
-  DRIVE. CONNECT.<br>
-  <span>ESCAPE.</span>
-</h1>
+      DRIVE. CONNECT.<br>
+      <span>ESCAPE.</span>
+    </h1>
     <p>Exclusive sports car rallies through Europe's most iconic mountain roads</p>
     <a href="#apply" class="btn">JOIN THE DRIVE</a>
   </div>
@@ -52,26 +52,28 @@
   <div class="section-box">
     <h2>Upcoming Events</h2>
 
-  <div class="grid">
-    
-  <div class="card" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600')">
-    <h3>Czech Republic Road Trip</h3>
-    <p>Poland → Czech Republic → Poland</p>
-    <button class="btn-secondary" onclick="openModal()">VIEW DETAILS</button>
-  </div>
-    
-  <div class="card" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600')">
-    <h3>Alps Edition</h3>
-    <p>Austria → Italy → Switzerland</p>
-    <button class="btn-secondary" onclick="openModal()">VIEW DETAILS</button>
-  </div>
+    <div class="grid">
+      
+      <div class="card" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600')">
+        <h3>Czech Republic Road Trip</h3>
+        <p>Poland → Czech Republic → Poland</p>
+        <button class="btn-secondary" onclick="openModal()">VIEW DETAILS</button>
+      </div>
+      
+      <div class="card" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600')">
+        <h3>Alps Edition</h3>
+        <p>Austria → Italy → Switzerland</p>
+        <button class="btn-secondary" onclick="openModal2()">VIEW DETAILS</button>
+      </div>
 
-  <div class="card" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600')">
-    <h3>Dolomites Run</h3>
-    <p>Italian mountain passes</p>
+      <div class="card" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600')">
+        <h3>Dolomites Run</h3>
+        <p>Italian mountain passes</p>
+      </div>
+      
+    </div>
+
   </div>
-    
-</div>
 </section>
 
 <!-- SCHEDULE -->
@@ -101,18 +103,18 @@
   <h2>Join Experience</h2>
 
   <form action="https://formspree.io/f/xrerkwkb" method="POST">
-  <input type="text" name="name" placeholder="Full Name" required>
-  <label>Date of Birth</label>
-  <input type="date" name="date" required>
-  <input type="text" name="car" placeholder="Car Model" required>
-  <input type="number" name="hp" placeholder="Horsepower" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="url" name="photo" placeholder="Car Photo Link" required>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <label>Date of Birth</label>
+    <input type="date" name="date" required>
+    <input type="text" name="car" placeholder="Car Model" required>
+    <input type="number" name="hp" placeholder="Horsepower" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="url" name="photo" placeholder="Car Photo Link" required>
 
-  <input type="hidden" name="_redirect" value="https://onlycarsevents.github.io/onlycars-events/thanks.html">
+    <input type="hidden" name="_redirect" value="https://onlycarsevents.github.io/onlycars-events/thanks.html">
 
-  <button type="submit" class="btn">APPLY NOW</button>
-</form>
+    <button type="submit" class="btn">APPLY NOW</button>
+  </form>
 </section>
 
 <!-- REVIEWS -->
@@ -128,13 +130,16 @@
   </div>
 </section>
 
-<!-- MODAL -->
+<!-- MODALS -->
+
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span onclick="closeModal('modal1')" class="close">×</span>
     <h2>Czech Republic Road Trip</h2>
     <p>Poland - Czech Republic - Poland Road Trip which contains 250km of curvy roads with amazing views and potencial to push your car to the limit</p>
-  
+  </div>
+</div>
+
 <div id="modal2" class="modal">
   <div class="modal-content">
     <span onclick="closeModal('modal2')" class="close">×</span>
@@ -152,12 +157,12 @@ function openModal(){
   document.getElementById("modal1").style.display="flex";
 }
 
-function closeModal(id){
-  document.getElementById(id).style.display="none";
+function openModal2(){
+  document.getElementById("modal2").style.display="flex";
 }
 
-function closeModal(){
-  document.getElementById("modal").style.display="none";
+function closeModal(id){
+  document.getElementById(id).style.display="none";
 }
 
 function addReview(){
