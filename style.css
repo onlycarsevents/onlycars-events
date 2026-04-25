@@ -185,24 +185,37 @@ h2{
 
 /* 🔥 CARDS */
 .card{
-  background:rgba(15,15,15,0.8);
+  position:relative;
+  height:220px;
   padding:25px;
-  border:1px solid rgba(0,174,240,0.1);
-  backdrop-filter:blur(10px);
-  transition:0.3s;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  border-radius:16px;
+  overflow:hidden;
+
+  background-size:cover;
+  background-position:center;
+
+  border:1px solid rgba(255,255,255,0.05);
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  border:1px solid rgba(0,174,240,0.4);
-  box-shadow:0 0 25px rgba(0,174,240,0.2);
+/* overlay */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
 }
 
-.card h3{
-  color:#00AFF0;
-  margin-bottom:10px;
+/* content */
+.card *{
+  position:relative;
+  z-index:2;
 }
-
 /* TIMELINE */
 .timeline{
   border-left:2px solid rgba(0,174,240,0.3);
