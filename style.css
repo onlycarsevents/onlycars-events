@@ -164,7 +164,16 @@ body{
 
 /* SECTIONS */
 .section{
-  padding:120px 10%;
+  padding:80px 10%;
+}
+
+/* 🔥 wrapper jak na grafice */
+.section-box{
+  background:rgba(10,10,10,0.7);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:40px;
+  backdrop-filter:blur(12px);
 }
 
 .dark{
