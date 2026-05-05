@@ -427,9 +427,24 @@ input:focus, textarea:focus{
   font-weight: 600;
   font-size: 14px;
 }
-.ig-embed {
-  margin-top: 30px;
-  max-width: 350px;
-  opacity: 0.95;
+.ig-follow {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #1ea0ff, #00c6ff);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 10px 30px rgba(0,174,240,0.3);
+  transition: 0.3s;
+}
+
+.ig-follow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0,174,240,0.6);
 }
 }
