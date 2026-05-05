@@ -385,4 +385,22 @@ input:focus, textarea:focus{
   box-shadow: 0 0 10px rgba(30,160,255,0.6);
   transform: translateY(-1px);
 }
+.apply-info {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(30,160,255,0.2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.apply-info p {
+  margin: 5px 0;
+  color: rgba(255,255,255,0.85);
+}
+
+.apply-info strong {
+  color: #1ea0ff;
+}
 }
