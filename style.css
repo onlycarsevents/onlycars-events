@@ -380,6 +380,7 @@ input:focus, textarea:focus{
   font-size: 14px;
   transition: 0.3s;
 }
+}
 
 .follow-btn:hover {
   box-shadow: 0 0 10px rgba(30,160,255,0.6);
