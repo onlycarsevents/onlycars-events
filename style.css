@@ -395,12 +395,35 @@ input:focus, textarea:focus{
   line-height: 1.6;
 }
 
-.apply-info p {
-  margin: 5px 0;
-  color: rgba(255,255,255,0.85);
+.apply-info {
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(30,160,255,0.25);
+  backdrop-filter: blur(10px);
 }
 
-.apply-info strong {
-  color: #1ea0ff;
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+}
+
+.info-value {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
 }
 }
