@@ -427,6 +427,50 @@ input:focus, textarea:focus{
   font-weight: 600;
   font-size: 14px;
 }
+.info-divider{
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,0.06);
+  margin:18px 0;
+}
+
+.included-section{
+  margin-top:5px;
+}
+
+.included-title{
+  display:block;
+  margin-bottom:14px;
+
+  color:rgba(255,255,255,0.6);
+  font-size:13px;
+}
+
+.included-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.included-list li{
+  position:relative;
+  padding-left:24px;
+
+  color:rgba(255,255,255,0.88);
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* neonowe checkmarki */
+.included-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+
+  color:#00AFF0;
+  font-weight:700;
 }
 .ig-profile {
   margin-top: 25px;
