@@ -435,7 +435,7 @@ input:focus, textarea:focus{
 }
 
 .included-section{
-  margin-top:5px;
+  padding:4px 0;
 }
 
 .included-title{
@@ -447,15 +447,16 @@ input:focus, textarea:focus{
 }
 
 .included-list{
-  list-style:none;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
 }
 
-.included-list li{
-  position:relative;
-  padding-left:24px;
+.included-list span{
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
+  line-height:1.5;
+}
 
   color:rgba(255,255,255,0.88);
   font-size:14px;
